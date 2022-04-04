@@ -24,15 +24,8 @@ public class CardDeliveryTest {
         open("http://localhost:9999");
     }
 
-    public String dateSetUp(int days) {
-        return LocalDate.now().plusDays(days).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-    }
-
     @Test
     void shouldTestValidation() {
-        String meetingDay = dateSetUp(3);
-        String meetingDay1 = dateSetUp(5);
-
         $("[data-test-id=city] input").setValue(RegistrationInfo.serviceCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(RegistrationInfo.serviceDate(3));
