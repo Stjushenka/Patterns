@@ -35,13 +35,7 @@ public class CardDeliveryTest {
         $(".button").click();
         $(withText("Успешно!"));
 
-        $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
+        $("[data-test-id=date] input").doubleClick();
         $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(RegistrationInfo.serviceDate(5));
         $(".button").click();
