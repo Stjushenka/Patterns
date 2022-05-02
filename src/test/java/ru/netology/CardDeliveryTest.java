@@ -20,13 +20,18 @@ import static com.codeborne.selenide.Selenide.*;
 public class CardDeliveryTest {
 
 
+
     @BeforeEach
     void shouldOpenWebApp() {
         open("http://localhost:9999");
     }
 
+
+
     @Test
     void shouldTestValidation() {
+
+
 
             $("[data-test-id=city] input").setValue(RegistrationInfo.serviceCity());
             $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
@@ -36,6 +41,7 @@ public class CardDeliveryTest {
             $(".checkbox__box").click();
             $(".button").click();
             $(withText("Успешно!"));
+            $(withText("Встреча успешно забронирована на"));
 
             $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
             $("[data-test-id=date] input").setValue(RegistrationInfo.serviceDate(5));
@@ -43,6 +49,10 @@ public class CardDeliveryTest {
             $(withText("У вас уже запланирована встреча на другую дату. Перепланировать?"));
             $("div.notification__content button").click();
             $(withText("Успешно!"));
+            $(withText("Встреча успешно забронирована на"));
+
     }
+
+
 
 }
