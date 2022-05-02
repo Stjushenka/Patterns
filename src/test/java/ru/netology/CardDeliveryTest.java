@@ -44,7 +44,7 @@ public class CardDeliveryTest {
             $(withText("Встреча успешно забронирована на" + meetingDay));
 
             $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-        $("[data-test-id=date] input").doubleClick().val(meetingDay+3);
+            $("[data-test-id=date] input").doubleClick().val(meetingDay+3);
             $(".button").click();
             $(withText("У вас уже запланирована встреча на другую дату. Перепланировать?"));
             $("div.notification__content button").click();
