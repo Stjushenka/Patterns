@@ -32,24 +32,24 @@ public class CardDeliveryTest {
     void shouldTestValidation() {
 
 
-
+        String meetingDay = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
             $("[data-test-id=city] input").setValue(RegistrationInfo.serviceCity());
             $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-            $("[data-test-id=date] input").setValue(RegistrationInfo.serviceDate(3));
+            $("[data-test-id=date] input").doubleClick().val(meetingDay);
             $("[data-test-id=name] input").setValue(RegistrationInfo.serviceName());
             $("[data-test-id=phone] input").setValue(RegistrationInfo.servicePhone());
             $(".checkbox__box").click();
             $(".button").click();
             $(withText("Успешно!"));
-            $(withText("Встреча успешно забронирована на"));
+            $(withText("Встреча успешно забронирована на" + meetingDay));
 
             $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
-            $("[data-test-id=date] input").setValue(RegistrationInfo.serviceDate(5));
+        $("[data-test-id=date] input").doubleClick().val(meetingDay+3);
             $(".button").click();
             $(withText("У вас уже запланирована встреча на другую дату. Перепланировать?"));
             $("div.notification__content button").click();
             $(withText("Успешно!"));
-            $(withText("Встреча успешно забронирована на"));
+            $(withText("Встреча успешно забронирована на" + meetingDay+3));
 
     }
 

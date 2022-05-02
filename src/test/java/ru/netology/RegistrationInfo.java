@@ -12,9 +12,7 @@ import java.util.Locale;
 
             private RegistrationInfo(){};
 
-            public static String serviceDate(int date) {
-                return LocalDate.now().plusDays(date).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-            }
+
 
             public static String serviceName (){
                 return faker.name().name();
