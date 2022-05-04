@@ -1,1 +1,1 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/fp2t9luh7j13ht79?svg=true)](https://ci.appveyor.com/project/Stjushenka/patterns)
+[![.github/workflows/gradle.yml](https://github.com/Stjushenka/Patterns/actions/workflows/gradle.yml/badge.svg)](https://github.com/Stjushenka/Patterns/actions/workflows/gradle.yml)
